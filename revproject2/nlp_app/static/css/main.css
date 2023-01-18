@@ -1,0 +1,137 @@
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); */
+.navbar {
+    padding-top: 80px;
+    }
+
+    .nav-link {
+    font-family: Roboto, Helvetica Neue, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    min-width: 88px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 2px;
+    text-align: center;
+    }
+
+    .nav-link:hover {
+    background: rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+    position: relative;
+    color: #f4f4f4;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    }
+
+    .navbar-brand {
+    font-family: Roboto, Helvetica Neue, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #f4f4f4;
+    padding: 0 16px;
+    }
+
+    .hero {
+    height: 800px;
+    background: url('https://wallpapercave.com/dwp1x/wp5485213.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    }
+
+    .hero-heading {
+        border: 1px solid #fff;
+        background: rgba(0,0,0, 0.4);
+        color: #fff;
+        padding: 25px 50px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        outline: none;
+        font-weight: 300;
+        margin-top: 80px;
+        margin-left: 150px;
+        margin-right: 150px;
+        transition: 0.65s;
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-family: 'Open Sans', sans-serif;
+        
+      }
+      
+    
+
+    .btnD1 {
+        border: 2px solid #fff;
+        color: #fff;
+        border-radius: 50px;
+        padding: 10px 50px;
+        font-size: 1.15rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        outline: none;
+        font-weight: 600;
+        margin-top: 150px;
+        transition: 0.65s;
+      }
+    
+    .btnD1:hover {
+        background: rgba(0,0,0, 0.4);
+        color: #fff;
+      }
+
+    
+    .hero-sub-title {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+
+    /* 
+    =================================
+    --------- Media Query -----------
+    ===============================*/
+
+    /*==============================
+    ---------- Mobile View  --------
+    ==============================*/
+    @media (min-width: 350px) and (max-width: 1024px) {
+    .navbar {
+    padding-top: 20px;
+    }
+    
+    .navbar-collapse {
+        background-color: #fff;
+        padding: 20px;
+        z-index: 55;
+    }
+
+
+
+    /* Mobile -btn */
+    .navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* ========================
+    -------- Desktop ----------
+    =========================*/
+
+    @media (min-width: 1200px) {
+    .navbar {
+        width: 1140px;
+        padding-left: 120px;
+    }
+
+    .text-white {
+        font-family: "Open Sans", sans-serif;
+    }
+}
+    }
