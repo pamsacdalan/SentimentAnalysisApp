@@ -5,25 +5,17 @@ import joblib
 import pickle
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
-import ml_model
-from ml_model import topk_encoding
+from ml_model import input_vectorizer
 import torch
 import scipy
 import numpy
 
+"""
+    model = torch.load("model.pth")
+    svectorizer = TfidfVectorizer(max_features=2000)
 
+"""
 
-# importing ml model here
-if __name__=='__main__':
-    with open('nlp_model.pkl', 'rb') as f:
-        model = pickle.load(f)
-
-if __name__=='__main__':
-    with open('vectorizer.pkl', 'rb') as v:
-        loaded_vectorizer = pickle.load(v)
-
-
-#model = joblib.load("nlp_model.pkl")
 
 # Create your views here.
 
@@ -35,20 +27,24 @@ def getPrediction(request):
     
     """ This function handles the review input and prediction of result """
     
+    
     form = SentimentsForm(request.POST)
     context = {}
+    print(context)
     
     if request.method == 'POST' :
+        
         if form.is_valid():
-
             final_review = form['review'].value() #extracts the review to be analyzed'
-            vec = loaded_vectorizer.transform(final_review).toarray() #transform the review
-            vec = torch.tensor(scipy.sparse.csr_matrix.todense(vec)).float()
-            prediction = model.forward(vec)
-            category = topk_encoding(prediction).detach().cpu().numpy()
-            context['text'] = category
-            print(context['text'])
-    
+            print(final_review)
+            prediction = input_vectorizer(final_review)
+            print(prediction)
+            context = {'result': prediction, 'input': final_review}
+            #context['text'] = prediction
+            print(context)
+
+            # 0 - negative // 1 - Neutral // 2 - Positive
+
     else:
         form = SentimentsForm()
 

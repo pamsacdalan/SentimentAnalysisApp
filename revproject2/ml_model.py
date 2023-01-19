@@ -98,6 +98,7 @@ def input_vectorizer(message):
     """
     Function to predict the category of inputted message
     """
+    category = []
     
     vec = vectorizer.transform(pd.Series(message))
     vec = torch.tensor(scipy.sparse.csr_matrix.todense(vec)).float()
